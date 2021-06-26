@@ -3,10 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Mood Journal</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="../css/header.css">
       <link rel="stylesheet" href="../css/footer.css">
@@ -16,85 +12,294 @@
 
   <script language="javascript" type="text/javascript" src="header.txt"></script>
 
-<!-- caurousel part -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel"></li>
-    <li data-target="#myCarousel"></li>
-    <li data-target="#myCarousel"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="container">
-        <p class="ques_prompt">Hope today was alright! How are you feeling?</p>
+  <div id="main-container">
+    <div class="header-container">
+      <div class="header-row">
+        <img class="mood-journal-stock" src="../resources/mood-journal/mood-journal.png">
+        <div class="header-details">
+          <h1 class="header">Mood Journal</h1>
+          <h3 class="header-preamble">A collection of your<br>thoughts and emotions</h3>
+        </div>
       </div>
     </div>
 
-    <div class="item">
-      <div class="container">
-      <p class="ques_prompt">Pen down 3 things you are grateful for!</p>
+    <div id="main-journal">
+      <div id="journal-header-row">
+        <div class="prompt-container">
+          <h3 class="arrow-left arrow" onclick="loadNextQuestionPrompt(-1)"><</h3>
+          <h3 id="prompt-question">How was your day?</h3>
+          <h3 class="arrow-right arrow" onclick="loadNextQuestionPrompt(1)">></h3>
+        </div>
+        <div class="date-container">
+          <h3 class="date-text"><span id="todays_date">25/06/21</span>&nbsp&nbsp<span id="todays_day">Fri</span></h3>
+        </div>
+      </div>
+
+      <hr class="journal-header-break">
+
+      <div class="text-area-container">
+        <textarea id="journal-entry" name="journal-entry" cols="80" rows="15" placeholder="Take a Deep Breath and pen down your thoughts!"></textarea>
+        <div class="journal-entry-right-column">
+          <h2 class="mood-header">Mood</h2>
+          <div class="moods-container">
+            <div class="moods">
+              <div class="mood-option" value="100" onclick="selectMood(this)"></div>
+              <div class="mood-option" value="80" onclick="selectMood(this)"></div>
+              <div class="mood-option" value="60" onclick="selectMood(this)"></div>
+              <div class="mood-option" value="40" onclick="selectMood(this)"></div>
+              <div class="mood-option" value="20" onclick="selectMood(this)"></div>
+              <div class="mood-option" value="0" onclick="selectMood(this)"></div>
+            </div>
+            <div class="mood-labels-container">
+              <h3 class="happy-mood mood-label">Happy</h3>
+              <h3 class="sad-mood mood-label" >Depressed</h3>
+            </div>
+          </div>
+          <button class="submit-entry" onclick="sendEntry()">Save</button>
+        </div>
       </div>
     </div>
+    <div class="mood-calendar-container">
+      <div class="calendar-header-row">
+        <img src="../resources/mood-journal/mood_calendar.png" class="calendar-stock">
+        <div class="calendar-description-container">
+          <h1 class="calendar-header-text">Mood Calendar</h1>
+          <h3 class="calendar-description-text">A general overview of your mood<br>throughout the month</h3>
+        </div>
+      </div>
+      <div id="main-calendar-container">
+        <div class="calendar-headers">
+          <div class="calendar-header">Monday</div>
+          <div class="calendar-header">Tuesday</div>
+          <div class="calendar-header">Wednesday</div>
+          <div class="calendar-header">Thursday</div>
+          <div class="calendar-header">Friday</div>
+          <div class="calendar-header">Saturday</div>
+          <div class="calendar-header">Sunday</div>
+        </div>
 
-    <div class="item">
-      <!-- <img src="../resources/pexels-martin-péchy-2078264.jpg" alt="pic" class="carousel-pic"> -->
-      <div class="container">
-      <p class="ques_prompt">What is keeping you up tonight?</p>
+        <div class="calendar-days-container">
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="day-details-container">
+              <div class="day-mood"></div>
+              <div class="day-date">1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mood-calendar-analysis-container">
+        <h2 class="analysis-header">Let's take a <span class="deeper">Deeper</span> look.</h2>
       </div>
     </div>
   </div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<br><br><br>
-<!-- textarea -->
-  <div class="container">
-    <form action="https://googlecloud" method="POST" content-type="application/json">
-      <textarea id="textarea" name="journal" rows="30" cols="130">
-        hey, you are doing great! would you like to jot down some of your feelings?
-  </textarea>
-    </form>
-  </div>
-  <br><br>
-
-<!-- slider -->
-<div class="container">
-  <p class="rate_section">Rate Your Feelings for the Day</p>
-  <br><br>
-    <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  </div>
-
-
-  <!-- have a save icon -->
-  <br><br><br>
-  <div class="container save">
-    <button>Save <i class="fa fa-save"></i></button>
-  </div>
-
-<!-- link to calendar -->
-<br><br><br>
-<div class="container calendar">
-  <a href=""><p>View Mood History</p></a>
-  <a href=""><i class="fa fa-calendar" style="font-size:36px"></i><a>
-</div>
-
-<br><br><br>
-
-  </body>
-  </div>
-
+  <script src="../js/mood-journal.js"></script>
   <script language="javascript" type="text/javascript" src="footer.txt"></script>
+</body>
 </html>
+
+
