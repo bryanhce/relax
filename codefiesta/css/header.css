@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    color: white;
+}
+
+#relax_logo {
+    height: 130px;
+    width: 130px;
+    margin-left: 50px;
+}
+
+#nav-bar {
+    display: flex;
+    flex-direction: flex-row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-container {
+    display: flex;
+    flex-direction: flex-row;
+    margin-right: 15%;
+}
+
+.nav-item {
+    margin-left: 40px;
+    font-size: 150%;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid transparent;
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav-item:hover {
+    border-color: #ff83b4;
+    transition: border-color 0.7s;
+}
+
+hr {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+    border-style: solid;
+    border-color: #ff83b4;
+}
