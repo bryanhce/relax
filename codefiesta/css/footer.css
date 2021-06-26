@@ -42,9 +42,14 @@
     margin-left: 50px;
 }
 
-.feedback-text {
+#feedback-text {
     font-size: 300%;
     font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+#feedback-text: hover{
+  text-decoration: none !important;
 }
 
 #email-input-form {
