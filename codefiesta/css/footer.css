@@ -1,5 +1,10 @@
 #footer {
+    display: flex;
+    flex-direction: column;
     background-color: #ff83b4;
+}
+
+#footer-container {
     margin-left: -10px;
     margin-right: -10px;
     display: flex;
@@ -15,10 +20,10 @@
 }
 
 .social {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     text-decoration: none;
-    margin: 7px;
+    margin: 15px;
 }
 
 .socials-container a {
@@ -50,6 +55,8 @@
 }
 
 #send-email-button {
+    font-size: 100%;
+    margin-left: 30px;
     border-radius: 30px;
     border: 2px solid black;
     font-family: 'Raleway', sans-serif;
@@ -61,4 +68,36 @@
     align-items: start;
     justify-content: space-between;
     width: 100%;
+}
+
+#footer-notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#footer-notes-break {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.footer-notes-links {
+    margin: 20px;
+    margin-left: 100px;
+}
+
+.footer-notes-links a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    font-family: 'Raleway', sans-serif;
+    margin-right: 20px;
+}
+
+.footer-notes-links a:hover {
+    border-color: black;
+    transition: border-color 0.7s;
+}
+
+.hackathon-text {
+    margin-right: 100px;
 }
