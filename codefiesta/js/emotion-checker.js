@@ -30,7 +30,7 @@ let questions = [
       question : "The sun is shining and the temperature is just right. What are you going to do?",
       choiceA : "The same repetitive thing I do everyday",
       choiceB : "I'm not sure - just waiting for someone to ruin my day",
-      choiceC : "Sing your favourite song",
+      choiceC : "Sing my favourite songs",
       choiceD : "Burrow in my bed and binge a Netflix series by myself"
 
     },{
