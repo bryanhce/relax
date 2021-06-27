@@ -152,7 +152,7 @@ function sendEntry() {
     console.log(date_text);
 
     //Send to Sheets:
-    fetch("https://api.apispreadsheets.com/data/14734/", {
+    fetch("https://api.apispreadsheets.com/data/14737/", {
     	method: "POST",
     	body: JSON.stringify({"data": {"date":date_text,"mood_value":selected_mood_value,"post_entry":current_entry_text,"question_general":question_prompt_text}}),
     }).then(res =>{
@@ -192,7 +192,7 @@ mood_colours = ["#54478c", "#048ba8", "#0db39e", "#16db93", "#83e377", "#b9e769"
 
 function loadCalendarWithData() {
     //Fetch Google sheets data:
-    fetch("https://api.apispreadsheets.com/data/14734/").then(res=>{
+    fetch("https://api.apispreadsheets.com/data/14737/").then(res=>{
     	if (res.status === 200){
     		// SUCCESS
     		res.json().then(data=>{
