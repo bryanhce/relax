@@ -1,7 +1,7 @@
 #footer {
     display: flex;
     flex-direction: column;
-    background-color: #ff83b4;
+    background-color: #E7ECFF;
 }
 
 #footer-container {
@@ -107,4 +107,3 @@
     margin-right: 100px;
 }
 
-@media
