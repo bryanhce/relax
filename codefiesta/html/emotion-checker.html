@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Emotion Checker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../css/header.css">
+      <link rel="stylesheet" href="../css/footer.css">
+      <link rel="stylesheet" type="text/css" href="../css/emotion-checker.css">
+      </head>
+  <body>
+  <script language="javascript" type="text/javascript" src="header.txt"></script>
+
+  <br><br>
+
+  <div class="container intro">
+    <div class="text">
+      <p class="emotion-text"><strong>Emotion Checker</strong></p>
+      <p class="get-text">Emotions are complex<br>Get a sense of how you are feeling</p>
+      <!-- <p>Emotions are so complex. They are affected by hormones, how you respond to the events around you and inner workings of your brain. At times, it would be difficult to figure out what you are truly feeling as they maybe be clouded by the millions of thougths and questions firing in your head. Take this quiz that is heavily inspired by ProProfs' Quizzes to get a sensing of what you are feeling.</p> -->
+    </div>
+  </div>
+  <br>
+
+  <div id="container">
+
+        <div id="start">Let's Get In Touch With Our Emotions</div>
+
+        <div id="quiz" style="display: none">
+          <img src="../resources/emotion-checker.jpg" alt="listening ear image" id="ls-image">
+            <div id="question"></div>
+            <!-- <div id="qImg"></div> -->
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+            </div>
+        </div>
+
+        <div id="resultContainer" style="display: none">
+          <div id="mood"></div>
+        </div>
+
+
+    </div>
+<br><br><br><br><br>
+
+<script src="../js/emotion-checker.js" language="javascript"></script>
+  <script language="javascript" type="text/javascript" src="footer.txt"></script>
+  </body>
+</html>
