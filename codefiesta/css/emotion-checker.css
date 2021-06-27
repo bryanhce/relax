@@ -1,7 +1,7 @@
 body{
     font-size: 20px;
     font-family: monospace;
-    /* background-color: #dbd8f0; */
+    /* background-color: #E5E5E5; */
 }
 
 #container{
@@ -14,12 +14,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff83b4;
+    background-color: #E7ECFF;
 }
 
 .text{
   display: flex;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   flex-direction: column;
   align-content: center;
@@ -37,6 +37,7 @@ body{
     color : black;
     display: flex;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
 }
 #start:hover{
     border: 3px solid lightgrey;
@@ -47,6 +48,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 200px;
 }
 
 #ls-image{
@@ -57,6 +59,13 @@ body{
 
 .emotion-text{
   font-size: 60px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.get-text{
+  font-family: 'Raleway', sans-serif;
+  color: #ff83b4;
+  margin-top: -1%;
 }
 
 #question{
@@ -70,6 +79,7 @@ body{
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
+    font-family: 'Raleway', sans-serif;
 }
 
 #choices{
@@ -77,6 +87,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    font-family: 'Raleway', sans-serif;
 }
 .choice{
     width : 150px;
@@ -104,5 +115,6 @@ body{
 }
 
 #mood{
-  font: Raleway;
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
 }
