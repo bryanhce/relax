@@ -61,3 +61,49 @@ hr {
     border-style: solid;
     border-color: #ff83b4;
 }
+
+@media screen and (max-width: 1300px) and (min-width: 1151px){
+    .nav-item {
+        font-size: 120%;
+    }
+
+    #relax_logo {
+        height: 110px;
+        width: auto;
+    }
+
+    .logo-text-container {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 1150px) and (min-width: 1011px){
+    .nav-item {
+        font-size: 95%;
+    }
+
+    #relax_logo {
+        height: 90px;
+        width: auto;
+    }
+
+    .logo-text-container {
+        font-size: 65%;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .nav-item {
+        font-size: 70%;
+    }
+
+    #relax_logo {
+        height: 70px;
+        width: auto;
+    }
+
+    .logo-text-container {
+        font-size: 50%;
+    }
+}
+
