@@ -1,3 +1,9 @@
-.container{
-  display: flex;
+iframe{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body{
+  background-color: #dbd8f0;
 }
