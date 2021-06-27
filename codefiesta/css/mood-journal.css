@@ -1,3 +1,9 @@
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #main-container {
     display: flex;
     flex-direction: column;
@@ -14,6 +20,7 @@
 .header-row {
     display: flex;
     flex-direction: row;
+    margin-right: 300px;
 }
 
 .mood-journal-stock {
@@ -220,6 +227,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 300px;
 }
 
 .calendar-stock {
@@ -261,8 +269,8 @@
     justify-content: space-around;
     font-size: 120%;
     margin-bottom: 40px;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .day {
@@ -272,7 +280,7 @@
     justify-content: flex-end;
     border: 2px solid black;
     border-radius: 20px;
-    width: 10.5%;
+    width: 10%;
     height: 80px;
     margin-bottom: 20px;
     margin-left: 12px;
@@ -296,12 +304,28 @@
     height: 20px;
     border-radius: 50%;
     margin-left: 10px;
-    background-color: red;
+    background-color: white;
 }
 
 .day-date {
     margin-right: 10px;
     font-size: 120%;
+}
+
+@media screen and (max-width: 1000px) {
+    .day-mood {
+        width: 12px;
+        height: 12px;
+    }
+
+    .day-date {
+        font-size: 100%;
+    }
+
+    .day {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
 }
 
 .analysis-header {
@@ -311,4 +335,10 @@
 
 .deeper {
     color: #ff83b4;
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+
+.deeper:hover {
+    opacity: 0.5;
 }

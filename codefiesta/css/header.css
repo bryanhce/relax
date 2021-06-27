@@ -9,6 +9,24 @@
     margin-left: 50px;
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text-container p {
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 180%;
+    font-weight: 900;
+}
+
 #nav-bar {
     display: flex;
     flex-direction: flex-row;

@@ -140,6 +140,7 @@ function sendEntry() {
         return;
     }
 
+    //Get Data
     let question_prompt = document.getElementById("prompt-question");
     let question_prompt_text = question_prompt.innerHTML;
     let date = document.getElementById("todays_date");
@@ -151,13 +152,99 @@ function sendEntry() {
     console.log(date_text);
 
     //Send to Sheets:
-
+    fetch("https://api.apispreadsheets.com/data/14730/", {
+    	method: "POST",
+    	body: JSON.stringify({"data": {"date":date_text,"mood_value":selected_mood_value,"post_entry":current_entry_text,"question":question_prompt_text}}),
+    }).then(res =>{
+    	if (res.status === 201){
+    		// SUCCESS
+    		console.log("Entry Saved!");
+            alert("Entry saved!");
+    	}
+    	else{
+    		// ERROR
+    		console.log("Entry didn't save!");
+    	    alert("Something went wrong! Please try again.")
+    	    return;
+    	}
+    })
 
 
     //Empty values:
     selected_mood.classList.remove("selected-mood");
     current_entry.value = "";
-    alert("Entry saved!");
 
+    setTimeout(function() {
+        loadCalendarWithData();
+        console.log("Updated Calendar!");
+    }, 2000);
+    return;
 }
+
+
+
+//Load Calendar with existing entries:
+
+//Google Sheets ID: 19ro2IJAtyFVoiTGv1iF4oKCxLq7SiuZdpPZOQ4iBDe4
+//Google Sheets API Key: 74a97099bf60e6c6e1aefd4f965e0515b4bcac8a
+//API Url: https://api.apispreadsheets.com/data/14731/
+mood_colours = ["#54478c", "#048ba8", "#0db39e", "#16db93", "#83e377", "#b9e769"];
+
+function loadCalendarWithData() {
+    fetch("https://api.apispreadsheets.com/data/14730/").then(res=>{
+    	if (res.status === 200){
+    		// SUCCESS
+    		res.json().then(data=>{
+    			const yourData = data
+                console.log(yourData);
+                let date_elements = document.getElementsByClassName("day");
+                for (entry of yourData["data"]) {
+                    let entry_day = entry["date"].slice(0,2);
+                    let entry_color = parseInt(entry["mood_value"]);
+                    console.log(entry_color);
+                        for (day_element of date_elements) {
+                            if (day_element.getElementsByClassName("day-date")[0].innerHTML == entry_day) {
+                                console.log("Yep");
+                                day_element.getElementsByClassName("day-mood")[0].style.backgroundColor = mood_colours[entry_color / 20];
+                            }
+                            else {
+                                //day_element.getElementsByClassName("day-mood")[0].style.backgroundColor = "white";
+                            }
+                        }
+                }
+
+    		}).catch(err => console.log(err))
+    		console.log("Successfully retrieved calendar data!");
+    	}
+    	else{
+    		// ERROR
+    		console.log("Failed in retrieving calendar data!")
+    	}
+    })
+}
+
+loadCalendarWithData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
